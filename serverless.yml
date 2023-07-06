@@ -15,6 +15,7 @@ provider:
             - "dynamodb:PutItem"
             - "dynamodb:Get*"
             - "dynamodb:Scan*"
+            - "dynamodb:GetItem"
             - "dynamodb:UpdateItem"
             - "dynamodb:DeleteItem"
           Resource: arn:aws:dynamodb:${aws:region}:${aws:accountId}:table/${self:service}-mensTable-${sls:stage}
@@ -45,4 +46,10 @@ functions:
     events:
       - httpApi:
           path: /getmens
+          method: get
+  getMenById:
+    handler: src/handlers/getMenById.getMenById
+    events:
+      - httpApi:
+          path: /getmenbyid/{id}
           method: get
