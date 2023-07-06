@@ -21,8 +21,11 @@ module.exports.getMens = async (event) => {
       total: result.Count,
       items: await result.Items.map((men) => {
         return {
-          name: men.primary_key,
+          id: men.primary_key,
+          name: men.name,
           email: men.email,
+          ranking: men.ranking,
+          country: men.country,
         };
       }),
     }),
