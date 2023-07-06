@@ -53,3 +53,9 @@ functions:
       - httpApi:
           path: /getmenbyid/{id}
           method: get
+  deleteMen:
+    handler: src/handlers/deleteMen.deleteMen
+    events:
+      - httpApi:
+          path: /deletemen/{id}
+          method: delete
