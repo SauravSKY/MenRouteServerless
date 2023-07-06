@@ -19,5 +19,6 @@ module.exports.createMen = async (event) => {
 
   return {
     statusCode: 201,
+    body: JSON.stringify("Created Item Successfully"),
   };
 };
